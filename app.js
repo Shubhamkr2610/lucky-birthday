@@ -15,6 +15,7 @@ checkBtn.addEventListener("click" , function checkData(event){
     const num = convertDOB(dateOfBirth.value);
     checkBdayLucky(num , luckyNumber.value);
     
+    
 })
 
 function convertDOB(dob){
@@ -31,7 +32,10 @@ function convertDOB(dob){
 function checkBdayLucky(num , luckyNumber){
     console.log(num)
     output.style.display = "block";
-    if(num % Number(luckyNumber)=== 0){
+    if(luckyNumber<0){
+        output.innerText = "please enter positive value";
+    }
+    else if(num % Number(luckyNumber)=== 0){
         output.innerText = "Your Birthday is lucky🥳🥳";  
     }
     else{
